@@ -234,27 +234,7 @@
   </style>
 </head>
 <body>
-<script>
-  const questions = document.querySelectorAll('.faq-question');
 
-  questions.forEach(q => {
-    q.addEventListener('click', () => {
-      const answer = q.nextElementSibling;
-
-      // 关闭其他已展开的
-      document.querySelectorAll('.faq-answer').forEach(a => {
-        if (a !== answer) a.style.maxHeight = null;
-      });
-
-      // 切换当前点击项
-      if (answer.style.maxHeight) {
-        answer.style.maxHeight = null;
-      } else {
-        answer.style.maxHeight = answer.scrollHeight + "px";
-      }
-    });
-  });
-</script>
 
 <header>
   <h1>CrunchCoCo</h1>
@@ -372,6 +352,28 @@
     observer.observe(section);
   });
 </script>
+<script>
+  const questions = document.querySelectorAll('.faq-question');
+
+  questions.forEach(q => {
+    q.addEventListener('click', () => {
+      const answer = q.nextElementSibling;
+
+      // 关闭其他已展开的
+      document.querySelectorAll('.faq-answer').forEach(a => {
+        if (a !== answer) a.style.maxHeight = null;
+      });
+
+      // 切换当前点击项
+      if (answer.style.maxHeight) {
+        answer.style.maxHeight = null;
+      } else {
+        answer.style.maxHeight = answer.scrollHeight + "px";
+      }
+    });
+  });
+</script>
+
 
 </body>
 </html>
